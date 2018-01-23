@@ -1,4 +1,4 @@
-import { lesson1 } from '../src';
+import lesson1 from '../src/lesson1';
 
 const {
   getDataType,
