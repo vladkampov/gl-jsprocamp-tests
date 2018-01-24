@@ -1,4 +1,4 @@
-import lessonn0 from '../src/lesson0';
+import lessonn0 from '../src/lesson0/index';
 
 describe('sum function', () => {
   test('sum', () => {
