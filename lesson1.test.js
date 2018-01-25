@@ -14,6 +14,8 @@ const {
   order,
   removeNegative,
   without,
+  calcExpression,
+  calcComparison
 } = lesson1.task;
 
 describe('Basic JavaScript', function() {
@@ -172,4 +174,22 @@ describe('Basic JavaScript', function() {
     });
 
   });
+
+  describe('Evaluation', function () {
+    it('should calculate mathematical expression with different types of arguments', function() {
+
+      expect(calcExpression('12/-4')).toEqual(-3);
+      expect(calcExpression('7  *  4')).toEqual(28);
+      expect(calcExpression('12+a8')).toEqual(NaN);
+    });
+
+    it('should evaluate logical expression with different types of arguments', function() {
+
+      expect(calcComparison('12.1 > -88.1')).toEqual(true);
+      expect(calcComparison('1000>0')).toEqual(true);
+      expect(calcComparison('95=5')).toEqual(false);
+      expect(calcComparison('22>a')).toThrow();
+    });
+  });
+
 });
