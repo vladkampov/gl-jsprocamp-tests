@@ -130,6 +130,14 @@ describe('Basic JavaScript', () => {
       expect(calcComparison('95=5')).toEqual(false);
       expect(() => calcComparison('22>a')).toThrow();
     });
+
+    it('should evaluate different keys', () => {
+
+      expect(evalKey({x: {y: 2}, z: 5}, '.x.y')).toEqual(2);
+      expect(evalKey({a: {b: {c: 8} } }, '.a.b.c')).toEqual(8);
+      expect(evalKey({1: {2: {3: 'c'} } }, '.1.2.3')).toEqual('c');
+      expect(() => evalKey({x: {y: 2}, z: 5}, '.x.y.z')).toThrow();
+    });
   });
 
 });

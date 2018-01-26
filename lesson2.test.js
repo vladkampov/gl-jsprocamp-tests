@@ -1,8 +1,8 @@
-import lessonn2 from '../src/lesson2';
+import lesson2 from '../src/lesson2';
 
 describe('sum function', () => {
   test('sum works good', () => {
-    
+
   });
 });
 
