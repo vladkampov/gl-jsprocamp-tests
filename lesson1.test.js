@@ -15,7 +15,8 @@ const {
   removeNegative,
   without,
   calcExpression,
-  calcComparison
+  calcComparison,
+  evalKey
 } = lesson1.task;
 
 describe('Basic JavaScript', () => {
@@ -133,10 +134,11 @@ describe('Basic JavaScript', () => {
 
     it('should evaluate different keys', () => {
 
-      expect(evalKey({x: {y: 2}, z: 5}, '.x.y')).toEqual(2);
-      expect(evalKey({a: {b: {c: 8} } }, '.a.b.c')).toEqual(8);
-      expect(evalKey({1: {2: {3: 'c'} } }, '.1.2.3')).toEqual('c');
-      expect(() => evalKey({x: {y: 2}, z: 5}, '.x.y.z')).toThrow();
+      expect(evalKey({ x: { y: 2 }, z: 5 }, '.x.y')).toEqual(2);
+      expect(evalKey({ a: { b: { c: 8 } } }, '.a.b.c')).toEqual(8);
+      expect(evalKey({ 1: { 2: { 3: 'c' } } }, '.1.2.3')).toEqual('c');
+      expect(() => evalKey({ x: 'a' }, 'x')).toThrow();
+      expect(() => evalKey({ x: { y: 2 }, z: 5 }, '.x.y.z')).toThrow();
     });
   });
 
