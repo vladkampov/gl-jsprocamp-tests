@@ -188,7 +188,7 @@ describe('Basic JavaScript', function() {
       expect(calcComparison('12.1 > -88.1')).toEqual(true);
       expect(calcComparison('1000>0')).toEqual(true);
       expect(calcComparison('95=5')).toEqual(false);
-      expect(calcComparison('22>a')).toThrow();
+      expect(() => calcComparison('22>a')).toThrow();
     });
   });
 
