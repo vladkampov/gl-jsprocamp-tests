@@ -68,7 +68,7 @@ describe('OOP in JavaScript', function () {
       new Monster("viper");
     }
 
-    it('It should be possible to create a Hero instance', function () {
+    it('It should be possible to create a Monster instance', function () {
       expect(zombie instanceof Monster).toBe(true);
       expect(skeleton instanceof Monster).toBe(true);
       expect(holem instanceof Monster).toBe(true);
@@ -82,7 +82,7 @@ describe('OOP in JavaScript', function () {
     });
 
 
-    it('It should be possible get Hero name', function () {
+    it('It should be possible get Monster name', function () {
       expect(zombie.getName()).toBe("I am Zombie I don`t have name");
       expect(skeleton.getName()).toBe("I am Skeleton I don`t have name");
       expect(holem.getName()).toBe("I am Holem I don`t have name");
@@ -172,7 +172,7 @@ describe('OOP in JavaScript', function () {
     zombie = new Monster("zombie");
     skeleton = new Monster("skeleton");
 
-    it('should not be possible add hero of unallowed class, like Monster can`t be Hero', function () {
+    it('should not be possible add hero of disallowed class, like Monster can`t be Hero', function () {
       var addMonsterAsHero = function () {
         return game.addHero(skeleton)
       }
@@ -180,7 +180,7 @@ describe('OOP in JavaScript', function () {
       expect(game.hero).not.toBeDefined();
     });
 
-    it('should not be possible create add monsters of unallowed class, like Hero can`t be Monster', function () {
+    it('should not be possible create add monsters of disallowed class, like Hero can`t be Monster', function () {
       var addHeroAsMonster = function () {
         return game.addMonster(sorcerer)
       }
